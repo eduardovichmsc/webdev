@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook: Login Page</title>
+
+    <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- css -->
+    <style>
+      .container {
+        max-width: 1240px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="bg-neutral-100">
+    <!-- content -->
+    <div class="container min-h-screen flex flex-col justify-center">
+      <div class="flex gap-10">
+        <!-- left -->
+        <div class="w-1/2 h-full flex flex-col justify-center gap-2">
+          <img src="img/facebook-Liberty-Shutters.png" alt="" class="w-64" />
+          <p class="font-normal text-4xl tracking-tight">
+            Facebook помогает вам всегда оставаться на связи и общаться со
+            своими знакомыми.
+          </p>
+        </div>
+
+        <!-- right -->
+        <div class="w-1/2 h-full">
+          <div class="w-[70%] ml-auto flex flex-col gap-6">
+            <div
+              class="px-4 py-6 bg-white shadow-xl rounded-md flex flex-col gap-4"
+            >
+              <input
+                type="text"
+                placeholder="Электронный адрес или номер телефона"
+                class="border border-neutral-200 py-2 px-4 w-full placeholder:text-neutral-400 rounded-md focus:outline focus:outline-blue-600"
+              />
+              <input
+                type="text"
+                placeholder="Пароль"
+                class="border border-neutral-200 py-2 px-4 w-full placeholder:text-neutral-400 rounded-md focus:outline focus:outline-blue-600"
+              />
+              <button
+                class="bg-blue-600 px-4 py-3 text-white rounded-md text-lg font-medium cursor-pointer"
+              >
+                Вход
+              </button>
+              <a
+                href="#"
+                class="text-sm text-center text-blue-500 font-medium tracking-tight"
+                >Забыли пароль?</a
+              >
+              <div class="w-full h-px bg-neutral-200"></div>
+              <div class="flex justify-center mt-2">
+                <button
+                  class="bg-green-500 px-4 py-3 text-white rounded-md text-lg font-medium cursor-pointer"
+                >
+                  Создать новый аккаунт
+                </button>
+              </div>
+            </div>
+
+            <p class="text-center">
+              <a href="#" class="font-bold">Создать Страницу</a>
+              знаменистости, музыкальной группы или компаний.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
