@@ -1,0 +1,163 @@
+/* default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Helvetica";
+  --color-dark: #313131;
+  --color-white: #ffffff;
+  --color-green: green;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--font);
+}
+
+section {
+  padding: 8rem 0;
+  margin: 0 auto;
+}
+
+/* hero */
+#hero {
+  background-color: #313131;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn_primary {
+  background-color: #ffffff;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: 0.2s;
+}
+.btn_primary:hover {
+  background-color: #ffffff75;
+}
+
+/* about */
+#about {
+  background-color: #ffffff;
+  padding: 8rem;
+}
+#about li {
+  list-style-type: lower-alpha;
+  margin: 0.5rem 0;
+}
+
+/* speakers */
+.speaker_container {
+  display: flex;
+  gap: 4rem;
+}
+.speaker_card {
+  overflow: hidden;
+  width: 23%;
+  border: 1px solid #313131;
+  text-align: center;
+  padding: 1rem;
+}
+.speaker_card img {
+  width: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+.speaker_title {
+  font-style: italic;
+}
+
+/* pricing */
+.price_container {
+  display: flex;
+}
+
+.price_card {
+  width: 33%;
+  background: #ffffff;
+  transition: 0.1s all;
+}
+.price_card.featured {
+  border: 1px solid blue;
+  background: rgb(0, 0, 255, 0.25);
+}
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: green;
+}
+.price_card li {
+  list-style: none;
+}
+.price_card a {
+  border: 1px solid black;
+  color: black;
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+.price_card:hover {
+  transform: scale(1.1);
+}
+
+/* contacts */
+#contacts {
+  background-color: aqua;
+}
+#contacts a {
+  text-decoration: underline;
+  text-underline-offset: 0.1rem;
+  animation: text 2s infinite;
+  transition: 1s all;
+}
+.social_media_link:hover {
+  display: block;
+  transform: scale(5);
+}
+.social_media {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+}
+@keyframes text {
+  0% {
+    color: yellow;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: yellow;
+  }
+}
+
+/* footer */
+#footer {
+  background-color: #313131;
+  color: white;
+}
+.footer_links {
+  display: flex;
+  list-style-type: none;
+}
+#footer a {
+  display: block;
+  color: white;
+  font-size: 0.75rem;
+  padding: 1rem;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: mediumslateblue;
+}
