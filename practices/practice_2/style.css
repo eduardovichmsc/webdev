@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --netflix-red: #e50914;
+    --netflix-red-hover: #f40612;
+    --netflix-black: #141414;
+    --netflix-dark: #000;
+    --text-white: #fff;
+    --text-gray: #737373;
+    --input-bg: #333333;
+    --input-border: #454545;
+}
+
+/* styles */
+/* header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 1rem 4rem;
+}
+.header_logo {
+    color: var(--netflix-red);
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.btn_signin {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--netflix-red);
+}
+
+/* hero */
+#hero {
+    height: 100vh;
+    background: var(--netflix-dark);
+    display: flex;
+    flex-direction: column;
+    padding: 10rem;
+}
+#hero h1 {
+    color: var(--text-white);
+    text-align: center;
+}
+.signin_card {
+    max-width: 450px !important;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 0;
+    border-radius: 1rem;
+}
+.signin_card form {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.input_section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.input_section input {
+    background: var(--input-bg);
+    color: var(--text-white);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+}
+.input_section input:focus {
+    border: 1px solid var(--text-white);
+    outline: none;
+}
+.btn_primary {
+    background: var(--netflix-red);
+    color: var(--text-white);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: 0.3s all
+}
+.btn_primary:hover {
+    background: var(--netflix-red-hover);
+}
+.signin_options {
+    display: flex;
+    justify-content: space-between;
+}
+.signin_card a {
+    color: var(--text-white);
+    font-weight: bold;
+}
+.signin_card p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* features */
+#features {
+}
+.feature_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.feature_row {
+    width: 49%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--input-bg);
+    color: var(--text-white);
+    border-bottom: 1px solid var(--input-border);
+    padding: 1rem;
+}
+.feature_row img {
+    max-width: 100%;
+}
+.features_row.reversed {
+    flex-direction: row-reverse;
+}
+
+/* plans */
+#plans {
+}
+
+.plans_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* faq */
+#faq {
+
+}
+.faq_grid {
+    display: flex;
+    flex-direction: column;
+}
+.faq_item {
+    background: #2d2d2d;
+    transition: 0.3s all;
+}
+.faq_question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.plus {
+    font-size: 1.2rem;
+    color: white;
+}
+.faq_answer {
+    background: #3d3d3d;
+}
+.faq_item:hover {
+    background: #2d2d2d30;
+}
+
+/* footer */
+footer {
+    background: var(--netflix-dark);
+    color: var(--text-gray);
+}
+.footer_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.footer_item a:hover {
+    color: var(--text-gray);
+    text-decoration: underline;
+}

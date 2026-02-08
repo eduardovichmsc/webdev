@@ -1,52 +1,69 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo.ist</title>
+<!DOCTYPE html>
+<html>
 
-    <style>
-      * {
-        box-sizing: border-box;
-        user-select: none;
-      }
-    </style>
+<head>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="png" href="planner.png">
 
-    <!-- tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-    <div
-      class="w-screen h-screen flex justify-center items-center bg-linear-to-tr from-emerald-300 to-emerald-600 bg-l"
-    >
-      <div
-        class="w-126 flex flex-col gap-6 bg-white/75 border border-neutral-800/25 p-12 rounded-md"
-      >
-        <p class="font-bold text-xl text-center">Todo App</p>
+</head>
 
-        <!-- form -->
-        <form action="" class="w-full h-12 flex">
-          <input
-            type="text"
-            placeholder="Add a new task"
-            class="w-5/6 h-full px-2 border-2 border-neutral-400 rounded-l-sm"
-            id="taskInput"
-          />
-          <div
-            onclick="addTask()"
-            class="cursor-pointer flex justify-center items-center w-1/6 h-full p-2 bg-green-600 text-white rounded-r-sm"
-          >
-            Add
-          </div>
-        </form>
-
-        <div class="flex flex-col gap-2" id="tasks">
-          <!-- tasks -->
-        </div>
-        <p class="text-red-500 text-center text-sm font-medium" id="error"></p>
-      </div>
+<body>
+    <div class="header" style="
+        background-color: black; height: 30px;
+        padding-left: 20px;
+        margin-top: 0;
+        padding-top: 10px;
+        height: 40px;
+        ">
+        <p style="
+        color: white;
+        margin-top: 0;
+        font-size: 18px;">
+            &#127770; ToDo List</p>
     </div>
 
-    <script src="scripts.js"></script>
-  </body>
+    <div class="main">
+        <div class="head-newTask">
+            <h1> &#127808; ToDo List</h1>
+            <div>
+                <input placeholder="&#128204; New Task" style=" 
+                height: 30px;
+                padding-left: 10px;
+                border-radius: 5px;
+                border-style: solid;
+                border-width: 2px;
+                width: 500px;
+                margin-right: 10px;
+                border-color: rgba(0, 0, 0, 0.1);
+                outline: none;
+                
+                " class="input">
+                <button style=" 
+                height: 34px;
+                border-width: 2px;
+                border-style: solid;
+                border-radius: 5px;
+                width: 70px;
+                border-color: rgba(0, 0, 0, 0.1);
+                " class="button">Add</button>
+            </div>
+        </div>
+        <div class="tasks">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
 </html>
