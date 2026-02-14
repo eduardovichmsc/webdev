@@ -1,0 +1,66 @@
+<div
+  class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100 flex flex-col h-full"
+>
+  <div class="relative h-64 w-full bg-gray-50 flex items-center justify-center p-4">
+    <img
+      [src]="currentImage"
+      [alt]="product.name"
+      class="max-h-full object-contain mix-blend-multiply"
+    />
+  </div>
+
+  <div class="flex gap-2 px-4 py-2 overflow-x-auto">
+    <button
+      *ngFor="let img of product.images"
+      (click)="selectImage(img)"
+      class="w-12 h-12 border rounded hover:border-blue-500 focus:outline-none overflow-hidden"
+      [class.border-blue-500]="currentImage === img"
+    >
+      <img [src]="img" class="w-full h-full object-cover" />
+    </button>
+  </div>
+
+  <div class="p-5 grow flex flex-col">
+    <div class="mb-2">
+      <h3 class="text-lg font-bold text-gray-800 leading-tight mb-1">
+        <a
+          [href]="product.link"
+          target="_blank"
+          class="hover:text-blue-600 underline decoration-transparent hover:decoration-blue-600 transition-all"
+        >
+          {{ product.name }}
+        </a>
+      </h3>
+
+      <div class="flex items-center text-yellow-400 text-sm">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]">
+          <i class="fas fa-star" [class.text-gray-300]="star > product.rating">★</i>
+        </span>
+        <span class="text-gray-400 ml-2 text-xs">({{ product.rating }})</span>
+      </div>
+    </div>
+
+    <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+      {{ product.description }}
+    </p>
+
+    <div class="mt-auto pt-4 border-t border-gray-100">
+      <div class="text-xl font-bold text-gray-900 mb-3">{{ product.price | number }} ₸</div>
+
+      <div class="flex gap-2">
+        <button
+          (click)="share('whatsapp')"
+          class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+        >
+          WhatsApp
+        </button>
+        <button
+          (click)="share('telegram')"
+          class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+        >
+          Telegram
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="container">
+    <header><h1>Character Counter</h1></header>
+    <main>
+      <section>
+        <form action="">
+          <label for="text">Enter your text: </label>
+          <textarea
+            on
+            name="text"
+            id="text_input"
+            rows="6"
+            placeholder="Start typing ..."
+          ></textarea>
+        </form>
+
+        <div class="stats">
+          <span class="char_count"> Characters: 0 / 200</span>
+          <span class="word_count"> Words: 0</span>
+        </div>
+
+        <p class="" id="limit_warning"></p>
+        <button id="clear_btn">Clear</button>
+      </section>
+    </main>
+
+    <!-- js -->
+    <script src="script.js"></script>
+  </body>
+</html>

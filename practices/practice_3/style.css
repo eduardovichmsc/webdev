@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #000fff75;
+  border-radius: 0.5rem;
+  resize: vertical;
+}
+textarea:hover {
+  border-color: #000fff50;
+  outline: none;
+}
+textarea:focus {
+  border-color: #000fff;
+  outline: none;
+}
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.char_count,
+.word_count {
+  color: gray;
+}
+
+.warning {
+  color: orange;
+}
+.danger {
+  color: red;
+}
+
+#clear_btn {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #000fff75;
+}
+#clear_btn:hover {
+  background-color: #000fff;
+  color: white;
+}
