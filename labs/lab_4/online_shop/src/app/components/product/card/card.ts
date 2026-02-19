@@ -1,39 +1,34 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../models/product.model';
 
 @Component({
-  selector: 'app-product-card',
+  selector: 'app-product-item',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './card.html',
   styleUrl: './card.css',
 })
-export class ProductCardComponent {
+export class ProductItemComponent {
   @Input() product!: Product;
+  @Output() remove = new EventEmitter<number>();
 
-  currentImage: string = '';
-
-  ngOnInit() {
-    this.currentImage = this.product.image;
+  likeProduct() {
+    this.product.likes += 1;
   }
 
-  selectImage(img: string) {
-    this.currentImage = img;
+  deleteProduct() {
+    this.remove.emit(this.product.id);
   }
 
-  share(platform: 'whatsapp' | 'telegram') {
-    const productUrl = encodeURIComponent(this.product.link);
-    const message = encodeURIComponent(`Check out this product: ${this.product.name}`);
-
-    let url = '';
-
+  shareProduct(platform: string) {
+    const url = encodeURIComponent(this.product.link);
+    let shareUrl = '';
     if (platform === 'whatsapp') {
-      url = `https://wa.me/?text=Check out this product: ${productUrl}`;
-    } else {
-      url = `https://t.me/share/url?url=${productUrl}&text=${message}`;
+      shareUrl = `https://wa.me/?text=${url}`;
+    } else if (platform === 'telegram') {
+      shareUrl = `https://t.me/share/url?url=${url}`;
     }
-
-    window.open(url, '_blank');
+    window.open(shareUrl, '_blank');
   }
 }

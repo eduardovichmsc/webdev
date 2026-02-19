@@ -1,7 +1,12 @@
-<div class="p-24">
-  <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">Products</h1>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <app-product-card *ngFor="let p of products" [product]="p"> </app-product-card>
-  </div>
+<div class="py-6">
+  @if (products.length > 0) {
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <app-product-item *ngFor="let p of products" [product]="p" (remove)="onRemoveProduct($event)">
+      </app-product-item>
+    </div>
+  } @else {
+    <div class="text-center py-20 text-gray-500">
+      <p class="text-xl">No products available in this category.</p>
+    </div>
+  }
 </div>
