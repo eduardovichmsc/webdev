@@ -1,0 +1,25 @@
+<div class="flex items-center gap-1">
+  <div class="flex">
+    @for (star of [1, 2, 3, 4, 5]; track star) {
+      <span
+        (click)="onStarClick(star)"
+        class="text-lg cursor-pointer"
+        (mouseenter)="onStarHover(star)"
+        (mouseleave)="onStarHover(-1)"
+        [ngClass]="
+          hoveredRating == -1
+            ? star <= product.rating
+              ? 'text-yellow-400'
+              : 'text-neutral-300'
+            : star <= hoveredRating
+              ? 'text-yellow-400'
+              : 'text-neutral-300'
+        "
+        >★</span
+      >
+    }
+  </div>
+  <div class="">
+    <p class="text-sm">{{ this.product.rating }}</p>
+  </div>
+</div>

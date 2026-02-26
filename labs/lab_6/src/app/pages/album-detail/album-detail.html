@@ -1,0 +1,36 @@
+@if (currentAlbum) {
+  <div class="p-4">
+    <h1 class="text-2xl font-bold mb-4">Album Details</h1>
+
+    <div class="mb-4">
+      <p><strong>Album ID:</strong> {{ currentAlbum.id }}</p>
+      <p><strong>User ID:</strong> {{ currentAlbum.userId }}</p>
+    </div>
+
+    <div class="mb-6 flex gap-2 items-center">
+      <label class="font-bold">Title:</label>
+      <input type="text" [(ngModel)]="editTitle" class="border p-2 rounded w-full max-w-md" />
+      <button
+        (click)="saveTitle()"
+        class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+      >
+        Save
+      </button>
+    </div>
+
+    <div class="flex gap-4">
+      <button
+        routerLink="/albums"
+        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+      >
+        Back
+      </button>
+      <button
+        [routerLink]="['/albums', currentAlbum.id, 'photos']"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        View Photos
+      </button>
+    </div>
+  </div>
+}

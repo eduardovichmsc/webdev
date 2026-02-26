@@ -28,7 +28,7 @@
 
     <div class="text-sm text-yellow-500 mb-2">★ {{ product.rating }}</div>
 
-    <p class="text-xs text-gray-500 mb-4 line-clamp-3 flex-grow">
+    <p class="text-xs text-gray-500 mb-4 line-clamp-3 grow">
       {{ product.description }}
     </p>
 
@@ -37,6 +37,8 @@
 
     <!-- Actions -->
     <div class="flex flex-col gap-2 mt-auto">
+      <app-star-rating [product]="product"></app-star-rating>
+
       <!-- Like Button -->
       <button
         (click)="likeProduct()"

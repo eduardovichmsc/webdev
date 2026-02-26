@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../models/product.model';
+import { StarRating } from '../../star-rating/star-rating';
 
 @Component({
   selector: 'app-product-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, StarRating],
   templateUrl: './card.html',
   styleUrl: './card.css',
 })

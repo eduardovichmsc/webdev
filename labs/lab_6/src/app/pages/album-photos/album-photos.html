@@ -1,0 +1,25 @@
+<div class="p-4">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Photos for Album {{ albumId }}</h1>
+
+    <button [routerLink]="['/albums', albumId]" class="bg-gray-500 text-white px-4 py-2 rounded">
+      Back to Album
+    </button>
+  </div>
+
+  @if (isLoading) {
+    <p>Loading photos...</p>
+  } @else {
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      @for (photo of photos; track photo.id) {
+        <div class="border p-2 rounded shadow-sm bg-white flex flex-col items-center group">
+          <img [src]="photo.thumbnailUrl" [alt]="photo.title" class="object-cover rounded w-full" />
+
+          <p class="text-xs mt-2 text-center text-gray-700 w-full truncate" [title]="photo.title">
+            {{ photo.title }}
+          </p>
+        </div>
+      }
+    </div>
+  }
+</div>
