@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Blog Posts</h1>
+
+  <ul class="post-list">
+    @for (post of posts; track $index) {
+      <li [routerLink]="['/posts', post.id]" class="post-item">
+        <span class="post-title">{{ post.title }}</span>
+      </li>
+    }
+  </ul>
+</div>

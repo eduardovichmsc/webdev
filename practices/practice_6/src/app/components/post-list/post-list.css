@@ -1,0 +1,28 @@
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+.post-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.post-item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.post-item:hover {
+  background-color: #f9f9f9;
+}
+.post-title {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

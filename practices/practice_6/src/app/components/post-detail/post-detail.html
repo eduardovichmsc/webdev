@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Post id: {{ id }}</h1>
+  @if (!post) {
+    <h1>Loading ...</h1>
+  }
+  @if (post) {
+    <h1 class="post-title">{{ post.title }}</h1>
+    <p class="post-body">{{ post.body }}</p>
+    <hr class="separator" />
+
+    <div class="">
+      <h2>Comments</h2>
+      @if (comments.length > 0) {
+        @for (comment of comments; track $index) {
+          <div class="comment-card">
+            <p class="comment-body">{{ comment.body }}</p>
+            <div class="comment-author">
+              <strong>{{ comment.name }}</strong>
+              <span class="comment-email">{{ comment.email }}</span>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  }
+</div>
